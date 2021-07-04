@@ -1,9 +1,9 @@
 ;;;; cl-roguelight.asd
 
 (asdf:defsystem #:cl-roguelight
-  :description "Describe cl-roguelight here"
+  :description "Playing with lighting in Common Lisp Roguelike"
   :author "Kehvarl <Kehvarl@Kehvarl.com>"
-  :license  "Specify license here"
+  :license  "MIT"
   :version "0.0.1"
   :serial t
   :depends-on (#:cl-blt)
