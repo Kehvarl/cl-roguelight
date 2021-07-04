@@ -1,8 +1,8 @@
 (in-package #:cl-roguelight)
 
 (defclass game-map ()
-  ((width :initarg :width :accessor game-map/width)
-   (height :initarg :height :accessor game-map/height)
+  ((width :initarg :width :accessor game-map/w)
+   (height :initarg :height :accessor game-map/h)
    (tiles :initarg :tiles :accessor game-map/tiles)))
 
 
