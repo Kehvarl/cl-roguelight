@@ -1,9 +1,9 @@
 # cl-roguelight
 ### _Kehvarl <Kehvarl@Kehvarl.com>_
 
-This is a project to do ... something.
+Project to test some lighting features for the cl-rltut roguelike tutorial
+
 
 ## License
-
-Specify license here
+MIT
 
