@@ -11,4 +11,7 @@
                              (:file "tile")
                              (:file "rect")
                              (:file "game-map")
+                             (:file "math")
+                             (:file "fov")
+                             (:file "render-functions")
                              (:file "cl-roguelight")))

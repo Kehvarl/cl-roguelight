@@ -7,7 +7,7 @@
    (visible :initarg :visible
             :accessor tile/visible
             :initform nil)
-   (blocked :initarg :blocked 
+   (blocked :initarg :blocked
             :accessor tile/blocked
             :initform nil)
    (block-sight :initarg :block-sight
