@@ -1,8 +1,8 @@
 (in-package #:cl-roguelight)
 
 (defclass game-map ()
-  ((width :initarg :width :accessor game-map/w)
-   (height :initarg :height :accessor game-map/h)
+  ((width :initarg :w :accessor game-map/w)
+   (height :initarg :h :accessor game-map/h)
    (tiles :initarg :tiles :accessor game-map/tiles)))
 
 
@@ -24,16 +24,19 @@
               ,@body))))
 
 (defmethod initialize-instance :after ((map game-map)
-                                       &key (initial-blocked-value t))
+                                       &key (initial-blocked-value nil)
+                                       (initial-light-value 5))
   (setf (game-map/tiles map) (make-array (list (game-map/w map)
                                                (game-map/h map))))
   (map-tiles-loop (map tile :col-val x :row-val y)
                   (setf (aref (game-map/tiles map) x y)
-                        (make-instance 'tile :blocked initial-blocked-value))))
+                        (make-instance 'tile
+                                       :blocked initial-blocked-value
+                                       :light initial-light-value))))
 
 (defmethod blocked-p ((map game-map) x y)
   (tile/blocked (aref (game-map/tiles map) x y)))
 
 (defmethod initialize-tiles ((map game-map))
   (map-tiles-loop (map tile :col-val x :row-val y)
-    (setf (aref (game-map/tiles map) x y) (make-instance 'tile :blocked t))))
+    (setf (aref (game-map/tiles map) x y) (make-instance 'tile :blocked nil))))
